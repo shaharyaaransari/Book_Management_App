@@ -34,7 +34,7 @@ const userLogin  = async (req, res) => {
         if (user) {
             bcrypt.compare(password, user.password, (err, decoded) => {
                 if (decoded) {
-                    const token = jwt.sign({ userId: user._id, username: user.name }, "gullu", { expiresIn: "7d" })
+                    const token = jwt.sign({ userId: user._id, role: user.role }, "gullu", { expiresIn: "7d" })
                     res.status(200).send({ msg: "Login successfully!!", token: token })
                 } else {
                     res.status(201).send({ msg: "wrong credentails!!" })
@@ -50,7 +50,16 @@ const userLogin  = async (req, res) => {
 }
 
 const userLogout = async(req,res)=>{
+    const token = req.headers.authorization?.split(" ")[1]
+    try {
+        if (token) {
+            await blacklistModel.create({ blacklist: [token] })
 
+        }
+        res.status(200).send({ "msg": "User has been logged out" })
+    } catch (error) {
+        res.status(400).send({ 'err': error.message })
+    }
 }
 
 module.exports = {

@@ -8,14 +8,21 @@ var jwt = require('jsonwebtoken');
             }
                 const decoded =jwt.verify(token, 'gullu');
                   req.userId = decoded.userId;
-                  req.username = decoded.username;
-                    console.log(decoded)
+                  req.role = decoded.role;
                      next()
 
         } catch (error) {
             res.status(400).send({ "err": error.measaage })
         }
    }
+   const roleMiddleware = (role) => {
+    return (req, res, next) => {
+        if (req.role === role) {
+            next();
+        } else {
+            return res.status(403).json({ message: 'You are not authorized to access this resource' });
+        }
+    };
+};
 
-
-   module.exports = auth;
+   module.exports = {auth,roleMiddleware};
