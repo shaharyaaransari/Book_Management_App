@@ -6,7 +6,6 @@ export default function HomePage() {
     const [data, setData] = useState([]);
     const [sortBy, setSortBy] = useState(""); 
     const [sortOrder, setSortOrder] = useState(1); 
-    const [searchQuery, setSearchQuery] = useState(""); 
     const [selectedGenres, setSelectedGenres] = useState([]); 
     const [userRole, setUserRole] = useState(""); 
     const [editBookId, setEditBookId] = useState(null);
@@ -39,7 +38,7 @@ export default function HomePage() {
         axios.get(url, config)
             .then((res) => {
                 setData(res.data);
-                console.log(res);
+             
             })
             .catch((err) => {
                 console.log(err);
@@ -81,11 +80,7 @@ export default function HomePage() {
     }
 
     
-    const handleSearch = (e) => {
-        setSearchQuery(e.target.value);
-       
-    }
-
+    
    
     const renderActionButtons = (book) => {
         if (userRole === 'CREATOR') {
@@ -146,15 +141,7 @@ export default function HomePage() {
                 <button onClick={() => handleGenreFilter('Shounen')}>Shounen</button>
             </div>
 
-            <div style={{ textAlign: "center" }}>
-                <input
-                    style={{ width: "300px", borderColor: "lime" }}
-                    className="searchAddress"
-                    placeholder="Search Data"
-                    value={searchQuery}
-                    onChange={handleSearch}
-                />
-            </div>
+          
 
             <div style={{ textAlign: "center" }}>
                 <table className="table" style={{ borderCollapse: "collapse", width: "100%" }}>

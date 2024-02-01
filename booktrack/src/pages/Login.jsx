@@ -98,9 +98,7 @@ export const Login = () => {
      
       } 
    
-      withReactContent(Swal).fire({
-        title: <i>User not found. Please register.</i>,
-      })
+    
     
     setDetails(initialValue);
   }
