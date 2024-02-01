@@ -93,3 +93,94 @@ body {
   max-width: 100px;
   max-height: 100px;
 }
+@media only screen and (max-width: 600px) {
+  /* Styles for screens up to 600px wide */
+  #root {
+    padding: 1rem;
+  }
+  
+  .back {
+    width: 90%;
+  }
+  
+  .back input {
+    width: calc(100% - 30px);
+  }
+  
+  .back button {
+    width: 150px;
+  }
+  
+  .back img {
+    width: 30%;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Styles for screens between 601px and 1024px wide */
+  #root {
+    padding: 1.5rem;
+  }
+  
+  .back {
+    width: 70%;
+  }
+  
+  .back input {
+    width: calc(100% - 25px);
+  }
+  
+  .back button {
+    width: 180px;
+  }
+  
+  .back img {
+    width: 35%;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  /* Styles for screens between 1025px and 1280px wide */
+  #root {
+    padding: 2rem;
+  }
+  
+  .back {
+    width: 60%;
+  }
+  
+  .back input {
+    width: calc(100% - 20px);
+  }
+  
+  .back button {
+    width: 200px;
+  }
+  
+  .back img {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  /* Styles for screens wider than 1280px */
+  #root {
+    padding: 2rem;
+  }
+  
+  .back {
+    width: 500px;
+  }
+  
+  .back input {
+    width: 100%;
+  }
+  
+  .back button {
+    width: 200px;
+  }
+  
+  .back img {
+    width: 40%;
+  }
+}
