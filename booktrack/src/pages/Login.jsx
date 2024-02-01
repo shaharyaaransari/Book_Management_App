@@ -1,14 +1,16 @@
 import axios from 'axios';
 import React, { useContext, useState } from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
+import { AuthContext } from '../context/ContextApi';
 
 export const Login = () => {
   const initialValue = { name: "", email: "", password: "", role: "" };
   const [details, setDetails] = useState(initialValue);
   const [formError, setFormError] = useState({});
   const [show, setShow] = useState(false);
-
+  const {isAuth,setAuth} = useContext(AuthContext)
   const handleChange = (e) => {
     const { name, value } = e.target;
     setDetails({ ...details, [name]: value });
@@ -18,7 +20,7 @@ export const Login = () => {
     setFormError(validate(details));
   
     if (details.email && details.name && details.password && details.role) {
-        axios.post(`http://localhost:8080/user/signup`,details)
+        axios.post(`https://sample-bakened.onrender.com/user/signup`,details)
         .then((res)=>{
             console.log(res)
                if(res.status===200){
@@ -76,8 +78,9 @@ export const Login = () => {
         axios.post(`https://sample-bakened.onrender.com/user/login`,details)
         .then((res)=>{
             console.log(res)
-              if(res.data.token){
+              if(res.status==200){
                   localStorage.setItem("token",res.data.token)
+                  setAuth(!isAuth)
                 withReactContent(Swal).fire({
                     title: <i>Login successful.</i>,
                   })
@@ -101,7 +104,9 @@ export const Login = () => {
     
     setDetails(initialValue);
   }
-
+ if(isAuth){
+    return <Navigate to="/"/>
+ }
   return (
     <div>
       <div className="back">

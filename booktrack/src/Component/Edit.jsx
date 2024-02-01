@@ -51,7 +51,7 @@ const EditBook = ({ bookId, onClose, userRole, fetchData }) => {
 
         await axios.put(`https://sample-bakened.onrender.com/books/${bookId}`, bookData, config);
         onClose();
-        // After update, fetch data again to re-render the updated book list
+     
         fetchData();
       } else {
         console.error('You are not authorized to update the book.');

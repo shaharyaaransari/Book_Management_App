@@ -4,11 +4,11 @@ import EditBook from "../Component/Edit";
 
 export default function HomePage() {
     const [data, setData] = useState([]);
-    const [sortBy, setSortBy] = useState(""); // State for sorting criteria
-    const [sortOrder, setSortOrder] = useState(1); // State for sorting order
-    const [searchQuery, setSearchQuery] = useState(""); // State for search query
-    const [selectedGenres, setSelectedGenres] = useState([]); // State for selected genres
-    const [userRole, setUserRole] = useState(""); // State for user role
+    const [sortBy, setSortBy] = useState(""); 
+    const [sortOrder, setSortOrder] = useState(1); 
+    const [searchQuery, setSearchQuery] = useState(""); 
+    const [selectedGenres, setSelectedGenres] = useState([]); 
+    const [userRole, setUserRole] = useState(""); 
     const [editBookId, setEditBookId] = useState(null);
 
     const handleEdit = (bookId) => {
@@ -17,13 +17,13 @@ export default function HomePage() {
 
     const handleCloseEdit = () => {
         setEditBookId(null);
-        // Refresh book list or perform other necessary actions
+       
     };
 
     useEffect(() => {
         fetchData();
-        // Assume userRole is obtained after authentication
-        setUserRole("CREATOR"); // Set user role here
+     
+        setUserRole("CREATOR");
     }, []); 
 
     const fetchData = () => {
@@ -46,19 +46,19 @@ export default function HomePage() {
             });
     }
 
-    // Function to handle sorting
+   
     const handleSort = (criteria) => {
         if (sortBy === criteria) {
-            // If already sorted by the same criteria, reverse the order
+          
             setSortOrder(sortOrder === 1 ? -1 : 1);
         } else {
-            // If sorting by a new criteria, set it and default to ascending order
+            
             setSortBy(criteria);
             setSortOrder(1);
         }
     }
 
-    // Function to handle genre filter
+  
     const handleGenreFilter = (genre) => {
         if (selectedGenres.includes(genre)) {
             setSelectedGenres(selectedGenres.filter(g => g !== genre));
@@ -67,26 +67,26 @@ export default function HomePage() {
         }
     }
 
-    // Function to check if a book matches selected genre(s)
+  
     const filterByGenre = (book) => {
         if (!book.genre || selectedGenres.length === 0) {
-            return true; // If no genre selected or genre is undefined, show all books
+            return true; 
         }
     
-        // Split the genre string into an array of genres
+        
         const bookGenres = book.genre.split(',').map(genre => genre.trim());
     
-        // Check if any of the selected genres are included in the book's genres
+        
         return selectedGenres.some(genre => bookGenres.includes(genre));
     }
 
-    // Function to handle search
+    
     const handleSearch = (e) => {
         setSearchQuery(e.target.value);
-        // Implement search functionality
+       
     }
 
-    // Function to render "Edit" and "Delete" buttons based on user's role
+   
     const renderActionButtons = (book) => {
         if (userRole === 'CREATOR') {
             return (
@@ -96,13 +96,13 @@ export default function HomePage() {
                 </React.Fragment>
             );
         }
-        return null; // Hide the buttons if the user is not a creator
+        return null; 
     }
 
    
-    // Function to handle delete action
+    
     const handleDelete = (bookId) => {
-        // Implement delete functionality
+       
         const token = localStorage.getItem('token');
         const config = {
             headers: {
@@ -114,7 +114,7 @@ export default function HomePage() {
         axios.delete(url, config)
             .then((res) => {
                 console.log("Book deleted:", res.data);
-                // Remove the deleted book from the state
+                
                 setData(data.filter(book => book._id !== bookId));
             })
             .catch((err) => {
@@ -122,12 +122,12 @@ export default function HomePage() {
             });
     }
 
-    // Function to sort data
+   
     const sortedData = [...data].sort((a, b) => {
         if (sortBy === 'price') {
             return (a.price - b.price) * sortOrder;
         }
-        // Add more sorting criteria if needed
+      
         return 0;
     });
 
