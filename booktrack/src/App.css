@@ -1,0 +1,73 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  background-color: #39445a;
+}
+
+.back {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: white;
+  width: 500px;
+  margin: 50px auto;
+ 
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+  
+  background-color: rgb(36, 77, 96);
+  ;
+}
+
+.back h3 {
+  color: rgb(8, 25, 33);
+ 
+}
+
+.back input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px;
+  border: 1px solid rgb(8, 25, 33);
+  
+  border-radius: 5px;
+  box-sizing: border-box;
+
+  background-color: rgb(175, 175, 191);
+}
+
+.back button {
+  background-color: rgb(8, 25, 33);
+  color: white;
+  padding: 10px;
+  border: none;
+  font-size: 25px;
+  margin-left: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 200px;
+}
+
+
+.back img {
+  width: 40%;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+
+.back label {
+  color: rgb(8, 25, 33);
+  margin-bottom: 8px;
+  text-align: left;
+  display: block;
+}
+
+.back p {
+  color: red;
+  text-align: left;
+
+}
