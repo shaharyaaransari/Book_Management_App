@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #39445a;
+  background-color: #bcc7df;
 }
 
 .back {
@@ -70,4 +70,26 @@ body {
   color: red;
   text-align: left;
 
+}
+.sortingButtons {
+  margin-bottom: 10px;
+}
+
+.sortingButtons button {
+  margin-right: 5px;
+}
+
+.table th, .table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.table th {
+  background-color: cyan;
+}
+
+.table img {
+  display: block;
+  max-width: 100px;
+  max-height: 100px;
 }

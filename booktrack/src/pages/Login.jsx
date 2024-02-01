@@ -21,13 +21,13 @@ export const Login = () => {
         axios.post(`http://localhost:8080/user/signup`,details)
         .then((res)=>{
             console.log(res)
-               if(res.data.msg){
+               if(res.status===200){
                 withReactContent(Swal).fire({
-                    title: <i>Register successful.</i>,
+                    title: <i>{res.data.msg}</i>,
                   })
                }else{
                 withReactContent(Swal).fire({
-                    title: <i>Register successful.</i>,
+                    title: <i>{res.data.msg}</i>,
                   })
                }
         })
@@ -73,10 +73,11 @@ export const Login = () => {
       setFormError(validate(details));
 
       if ( details.email && details.password) {
-        axios.post(`http://localhost:8080/user/login`,details)
+        axios.post(`https://sample-bakened.onrender.com/user/login`,details)
         .then((res)=>{
             console.log(res)
               if(res.data.token){
+                  localStorage.setItem("token",res.data.token)
                 withReactContent(Swal).fire({
                     title: <i>Login successful.</i>,
                   })
