@@ -80,6 +80,7 @@ export const Login = () => {
             console.log(res)
               if(res.status==200){
                   localStorage.setItem("token",res.data.token)
+                  localStorage.setItem("role",res.data.role)
                   setAuth(!isAuth)
                 withReactContent(Swal).fire({
                     title: <i>Login successful.</i>,

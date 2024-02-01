@@ -21,8 +21,9 @@ export default function HomePage() {
 
     useEffect(() => {
         fetchData();
-     
-        setUserRole("CREATOR");
+       const role = localStorage.getItem("role")
+         console.log(role)
+       setUserRole(role)
     }, []); 
 
     const fetchData = () => {
@@ -80,9 +81,10 @@ export default function HomePage() {
     }
 
     
-    
+    console.log(userRole)
    
     const renderActionButtons = (book) => {
+      
         if (userRole === 'CREATOR') {
             return (
                 <React.Fragment>
@@ -172,7 +174,7 @@ export default function HomePage() {
                                 <td>{book.genre}</td>
                                 <td>{book.price}</td>
                                 <td>{book.createdAt}</td>
-                                {renderActionButtons(book)}
+                                {userRole === 'CREATOR'&& renderActionButtons(book)}
                             </tr>
                         ))}
                     </tbody>
