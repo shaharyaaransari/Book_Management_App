@@ -69,11 +69,7 @@ export const Login = () => {
   }
 
   const handleLogin = () => {
-   
-   
-     
       setFormError(validate(details));
-
       if ( details.email && details.password) {
         axios.post(`https://sample-bakened.onrender.com/user/login`,details)
         .then((res)=>{
@@ -95,12 +91,7 @@ export const Login = () => {
         .catch((err)=>{
          console.log(err)
         })
-        
-     
       } 
-   
-    
-    
     setDetails(initialValue);
   }
  if(isAuth){

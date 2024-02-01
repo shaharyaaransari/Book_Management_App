@@ -89,7 +89,7 @@ export default function HomePage() {
             return (
                 <React.Fragment>
                     <td><button onClick={() => handleEdit(book._id)}>Edit</button></td>
-                    <td><button onClick={() => handleDelete(book._id)}>Delete</button></td>
+                    <td><button className="delete"  onClick={() => handleDelete(book._id)}>Delete</button></td>
                 </React.Fragment>
             );
         }
@@ -135,7 +135,7 @@ export default function HomePage() {
                 <button className="sortByRentDesc" onClick={() => handleSort('price')}>Sort by Price Desc</button>
             </div>
 
-            <div>
+            <div  className="genre">
                 <div>Filter by Genre:</div>
                 <button onClick={() => handleGenreFilter('Action')}>Action</button>
                 <button onClick={() => handleGenreFilter('Adventure')}>Adventure</button>
@@ -155,7 +155,7 @@ export default function HomePage() {
                             <th>Genre</th>
                             <th>Price</th>
                             <th>Created At</th>
-                            {userRole === 'CREATOR' && <React.Fragment><th> 
+                            {userRole === 'CREATOR' && <React.Fragment><th> Edit
                             {editBookId && <EditBook bookId={editBookId} onClose={handleCloseEdit} userRole={userRole} />}</th><th>Delete</th></React.Fragment>}
                         </tr>
                     </thead>
