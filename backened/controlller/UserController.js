@@ -35,7 +35,7 @@ const userLogin  = async (req, res) => {
             bcrypt.compare(password, user.password, (err, decoded) => {
                 if (decoded) {
                     const token = jwt.sign({ userId: user._id, role: user.role }, "gullu", { expiresIn: "7d" })
-                    res.status(200).send({ msg: "Login successfully!!", token: token,role: user.role })
+                    res.status(200).send({ msg: "Login successfully!!", token: token,role: user.role ,name:user.name})
                 } else {
                     res.status(201).send({ msg: "wrong credentails!!" })
                 }
