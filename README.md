@@ -29,4 +29,5 @@ Usage
 ![Screenshot (333)](https://github.com/shaharyaaransari/English-Quest-/assets/113225294/f0a84927-22a1-4ce5-998a-753de73268b4)
 
 ![Screenshot (334)](https://github.com/shaharyaaransari/English-Quest-/assets/113225294/8375d5f9-d483-49f1-9593-41cb25accf03)
-![Screenshot (335)](https://github.com/shaharyaaransari/English-Quest-/assets/113225294/20a3af34-487f-42b6-9723-efb013090f3e)
+![Screenshot (336)](https://github.com/shaharyaaransari/English-Quest-/assets/113225294/d392c228-bb48-4708-94e2-75c34125799d)
+
