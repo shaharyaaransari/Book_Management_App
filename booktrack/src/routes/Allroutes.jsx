@@ -1,8 +1,9 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import HomePage from "../pages/Homepage";
+
 import { Login } from "../pages/Login";
 import PrivateRoute from "./PrivateRoute";
+import { Home } from "../pages/Home";
 export const Allroutes = () => {
   return (
     <div>
@@ -12,7 +13,7 @@ export const Allroutes = () => {
           element={
             <PrivateRoute>
               {" "}
-              <HomePage />
+              <Home />
             </PrivateRoute>
           }
         />

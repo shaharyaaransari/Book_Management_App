@@ -1,12 +1,6 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
 
 body {
-  background-color: #bcc7df;
+  background-color: #111724;
 }
 
 .back {
@@ -14,11 +8,11 @@ body {
   background-color: white;
   width: 500px;
   margin: 50px auto;
- 
+ font-weight: 900;
   padding: 20px;
-  font-family: "Montserrat", sans-serif;
-  
-  background-color: rgb(36, 77, 96);
+  font-family: "Montserrat";
+  color: white;
+  background-color: rgb(37, 51, 58);
   ;
 }
 
@@ -32,10 +26,8 @@ body {
   margin-bottom: 10px;
   padding: 15px;
   border: 1px solid rgb(8, 25, 33);
-  
   border-radius: 5px;
   box-sizing: border-box;
-
   background-color: rgb(175, 175, 191);
 }
 
@@ -44,11 +36,13 @@ body {
   color: white;
   padding: 10px;
   border: none;
-  font-size: 25px;
+  font-size: 20px;
   margin-left: 10px;
-  border-radius: 15px;
+  border-radius: 20px;
   cursor: pointer;
-  width: 200px;
+  font-family: "Montserrat";
+  background:  #1a1e27;
+  
 }
 
 
@@ -56,6 +50,8 @@ body {
   width: 40%;
   border-radius: 50%;
   margin-bottom: 20px;
+   margin-left: 125px;
+     margin-top: 30px;
 }
 
 
@@ -86,9 +82,28 @@ body {
   margin-left: 10px;
   border-radius: 15px;
   cursor: pointer;
-  width: 200px;
+  width: 115px;
 }
-
+.sort-price{
+    
+    display: flex;
+      width: 70%;
+      margin:20px auto;
+      justify-content: space-between;
+}
+  .sort-price span{
+       margin-left: 20px;
+  }
+.sort-price button{
+  background-color: #35355e;
+  border: none;
+  margin: 10px;
+  font-family: "Montserrat";
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+  width: 115px;
+}
 .genre button{
   margin:10px 5px;
   background-color: rgba(27, 56, 114, 0.811);
@@ -103,123 +118,8 @@ body {
   width: 200px;
 }
 
-.table th, .table td {
-  padding: 8px;
-  border: 1px solid #ddd;
-}
-
-.table th {
-  background-color: #373161b5;
-}
-
-.table img {
-  display: block;
-  max-width: 100px;
-  max-height: 100px;
-}
-  .table button{
-    background-color: rgb(8, 33, 13);
-  color: white;
-  padding: 10px;
-  border: none;
-  font-size: 25px;
-  margin-left: 10px;
-  border-radius: 15px;
-  cursor: pointer;
-  width: 200px;
-  }
-
-  .table .delete{
-      background-color:rgba(113, 14, 14, 0.881) ;
-  }
-@media only screen and (max-width: 600px) {
-  /* Styles for screens up to 600px wide */
-  #root {
-    padding: 1rem;
-  }
-  
-  .back {
-    width: 90%;
-  }
-  
-  .back input {
-    width: calc(100% - 30px);
-  }
-  
-  .back button {
-    width: 150px;
-  }
-  
-  .back img {
-    width: 30%;
-  }
-}
-
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-  /* Styles for screens between 601px and 1024px wide */
-  #root {
-    padding: 1.5rem;
-  }
-  
-  .back {
-    width: 70%;
-  }
-  
-  .back input {
-    width: calc(100% - 25px);
-  }
-  
-  .back button {
-    width: 180px;
-  }
-  
-  .back img {
-    width: 35%;
-  }
-}
-
-@media only screen and (min-width: 1025px) and (max-width: 1280px) {
-  /* Styles for screens between 1025px and 1280px wide */
-  #root {
-    padding: 2rem;
-  }
-  
-  .back {
-    width: 60%;
-  }
-  
-  .back input {
-    width: calc(100% - 20px);
-  }
-  
-  .back button {
-    width: 200px;
-  }
-  
-  .back img {
-    width: 40%;
-  }
-}
-
-@media only screen and (min-width: 1281px) {
-  /* Styles for screens wider than 1280px */
-  #root {
-    padding: 2rem;
-  }
-  
-  .back {
-    width: 500px;
-  }
-  
-  .back input {
-    width: 100%;
-  }
-  
-  .back button {
-    width: 200px;
-  }
-  
-  .back img {
-    width: 40%;
-  }
+.swal2-title {
+  width: 450px;
+  justify-content: center;
+  text-align: center;
 }

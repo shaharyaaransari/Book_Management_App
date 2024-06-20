@@ -77,14 +77,21 @@ export const Login = () => {
               if(res.status==200){
                   localStorage.setItem("token",res.data.token)
                   localStorage.setItem("role",res.data.role)
-                  setAuth(!isAuth)
+                    localStorage.setItem("name",res.data.name)
+                  setAuth(true)
                 withReactContent(Swal).fire({
                     title: <i>Login successful.</i>,
+                    customClass: {
+                      title: 'swal2-title' // Apply the custom class
+                  }
                   })
               }
               else {
                 withReactContent(Swal).fire({
                   title: <i>Invalid email or password.</i>,
+                  customClass: {
+                    title: 'swal2-title' // Apply the custom class
+                }
                 })
               }
         })
@@ -103,26 +110,26 @@ export const Login = () => {
         {show ? <>
           <h2>Sign Up</h2>
           <img src="https://www.bonanzaonline.com/images/img_avatar.png" alt="avatar" />
-          <label htmlFor="uname"><b>name</b></label>
+          <label htmlFor="uname" style={{color:"white"}}><b>Name</b></label>
           <input type="text" name="name" value={details.name} onChange={handleChange} placeholder="Enter name" />
           <p>{formError.name}</p>
-          <label htmlFor="email"><b>Email</b></label>
+          <label htmlFor="email" style={{color:"white"}}><b>Email</b></label>
           <input type="email" name="email" value={details.email} onChange={handleChange} placeholder="Enter Email" />
           <p>{formError.email}</p>
-          <label htmlFor="role"><b>Role</b></label>
+          <label htmlFor="role" style={{color:"white"}}><b>Role</b></label>
           <input type="text" name="role" value={details.role} onChange={handleChange} placeholder="Enter Role" />
           <p>{formError.role}</p>
-          <label htmlFor="psw"><b>Password</b></label>
+          <label htmlFor="psw" style={{color:"white"}}><b>Password</b></label>
           <input type="password" name="password" value={details.password} onChange={handleChange} placeholder="Enter password" />
           <p>{formError.password}</p>
           <button onClick={handleRegister}>Register</button>
         </> : <>
           <h2>Login</h2>
           <img src="https://www.bonanzaonline.com/images/img_avatar.png" alt="avatar" />
-          <label htmlFor="email"><b>Email</b></label>
+          <label htmlFor="email" style={{color:"white"}}><b>Email</b></label>
           <input type="email" name="email" value={details.email} onChange={handleChangeLogin} placeholder="Enter Email" />
           <p>{formError.email}</p>
-          <label htmlFor="password"><b>Password</b></label>
+          <label htmlFor="password" style={{color:"white"}}><b>Password</b></label>
           <input type="password" name="password" value={details.password} onChange={handleChangeLogin} placeholder="Enter password" />
           <button onClick={handleLogin}>Login</button>
           <button onClick={() => setShow(!show)}>Register</button>

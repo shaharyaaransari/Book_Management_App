@@ -1,0 +1,49 @@
+.book-container {
+    background-color: rgb(19, 19, 48);
+    width: 350px;
+   
+    margin: 15px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-container:hover {
+    border: 2px solid #61c96f;
+    transition: all 0.3s;
+}
+
+.book-container img {
+    width: 80%; 
+    margin-left: 20px;
+    
+    padding: 10px;
+}
+
+.book-container span {
+    color:wheat;
+    display: block;
+    padding: 0;
+    font-family: "Montserrat";
+    margin-left: 17px;
+    font-size: 20px;
+}
+
+button {
+    background-color: #35355e;
+    border: none;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+      font-family: "Montserrat";
+    width: 100px;
+    cursor: pointer;
+}
+
+   
+  
+  
+ 
