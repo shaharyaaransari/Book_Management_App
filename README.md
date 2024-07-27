@@ -26,8 +26,9 @@ Usage
 3. Sort books by price and filter them by genre.
 ## over View Website
 
-![Screenshot (333)](https://github.com/shaharyaaransari/English-Quest-/assets/113225294/f0a84927-22a1-4ce5-998a-753de73268b4)
-
-![Screenshot (334)](https://github.com/shaharyaaransari/English-Quest-/assets/113225294/8375d5f9-d483-49f1-9593-41cb25accf03)
-![Screenshot (336)](https://github.com/shaharyaaransari/English-Quest-/assets/113225294/d392c228-bb48-4708-94e2-75c34125799d)
-
+![Screenshot (425)](https://github.com/user-attachments/assets/269a11bc-1917-41a6-9a9e-0f36fb687f8c)
+![Screenshot (421)](https://github.com/user-attachments/assets/1692946c-6915-4461-a5c4-73be1f420d5c)
+![Screenshot (423)](https://github.com/user-attachments/assets/10215605-cb5f-4237-9111-a0fe2e42f2e0)
+![Screenshot (424)](https://github.com/user-attachments/assets/7f9e2e76-8852-47ad-b128-97e8d2fb36f3)
+![Screenshot (426)](https://github.com/user-attachments/assets/b7a79ae1-cca1-4145-9cba-e60ba28e20cb)
+![Screenshot (428)](https://github.com/user-attachments/assets/115782e8-cf12-439a-801f-c92bb909ebd9)
