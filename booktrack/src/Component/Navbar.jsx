@@ -4,7 +4,8 @@ import { CiSearch } from "react-icons/ci";
 import { RxCrossCircled } from "react-icons/rx";
 import axios from 'axios';
 import { AuthContext } from '../context/ContextApi';
-export const Navbar = ({name}) => {
+import { Link } from 'react-router-dom';
+export const Navbar = ({name,role}) => {
   const {setAuth,setTitle,title} = useContext(AuthContext)
      const [search,setSearch] = useState('')
   const handleLogout = () => {
@@ -55,7 +56,7 @@ export const Navbar = ({name}) => {
    <div className='nav-child'>
       
     {name && <span className='title' style={{marginRight:"20px"}}>{name}</span>}
-      
+      {role ==="CREATOR" && <Link className='admin-link' to="/admin">Admin</Link>}
          <button onClick={handleLogout}>Logout</button>
    </div>
 

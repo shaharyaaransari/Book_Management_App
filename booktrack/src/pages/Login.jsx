@@ -6,7 +6,7 @@ import withReactContent from 'sweetalert2-react-content';
 import { AuthContext } from '../context/ContextApi';
 
 export const Login = () => {
-  const initialValue = { name: "", email: "", password: "", role: "" };
+  const initialValue = { name: "", email: "", password: "" };
   const [details, setDetails] = useState(initialValue);
   const [formError, setFormError] = useState({});
   const [show, setShow] = useState(false);
@@ -19,7 +19,7 @@ export const Login = () => {
   const handleRegister = () => {
     setFormError(validate(details));
   
-    if (details.email && details.name && details.password && details.role) {
+    if (details.email && details.name && details.password ) {
         axios.post(`https://sample-bakened.onrender.com/user/signup`,details)
         .then((res)=>{
             console.log(res)
@@ -54,9 +54,7 @@ export const Login = () => {
     if (!value.email) {
       error.email = "Email is required!";
     }
-    if (!value.role) {
-      error.role = "Role is required!";
-    }
+   
     if (!value.password) {
       error.password = "Password is required!";
     } else if (!regex.test(value.password)) {
@@ -118,9 +116,7 @@ export const Login = () => {
           <label htmlFor="email" style={{color:"white"}}><b>Email</b></label>
           <input type="email" name="email" value={details.email} onChange={handleChange} placeholder="Enter Email" />
           <p>{formError.email}</p>
-          <label htmlFor="role" style={{color:"white"}}><b>Role</b></label>
-          <input type="text" name="role" value={details.role} onChange={handleChange} placeholder="Enter Role" />
-          <p>{formError.role}</p>
+         
           <label htmlFor="psw" style={{color:"white"}}><b>Password</b></label>
           <input type="password" name="password" value={details.password} onChange={handleChange} placeholder="Enter password" />
           <p>{formError.password}</p>

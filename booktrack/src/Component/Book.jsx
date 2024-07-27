@@ -3,15 +3,15 @@ import { BooksCard } from "./BooksCard";
 import Modal from "./Modal";
 import { useState } from "react";
 
-export default function Book({ data, fetchData ,role}) {
+export default function Book({ data, fetchData, role }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedBook, setSelectedBook] = useState(null);
   const [bookData, setBookData] = useState({
-    title: '',
-    author: '',
-    genre: '',
-    price: '',
-    image: '',
+    title: "",
+    author: "",
+    genre: "",
+    price: "",
+    image: "",
   });
 
   const handleDelete = (bookId) => {
@@ -37,7 +37,7 @@ export default function Book({ data, fetchData ,role}) {
 
   const handleOpenModal = (book) => {
     setSelectedBook(book);
-    setBookData(book); 
+    setBookData(book);
     setIsModalOpen(true);
   };
 
@@ -45,11 +45,11 @@ export default function Book({ data, fetchData ,role}) {
     setIsModalOpen(false);
     setSelectedBook(null);
     setBookData({
-      title: '',
-      author: '',
-      genre: '',
-      price: '',
-      image: '',
+      title: "",
+      author: "",
+      genre: "",
+      price: "",
+      image: "",
     });
   };
 
@@ -64,32 +64,33 @@ export default function Book({ data, fetchData ,role}) {
   const handleSave = async (e) => {
     e.preventDefault();
     try {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem("token");
       const config = {
         headers: {
-          Authorization: `Bearer ${token}`
-        }
+          Authorization: `Bearer ${token}`,
+        },
       };
       const url = `https://sample-bakened.onrender.com/books/${selectedBook._id}`;
       await axios.put(url, bookData, config);
       fetchData();
       handleCloseModal();
     } catch (error) {
-      console.error('Error updating book:', error);
+      console.error("Error updating book:", error);
     }
   };
 
   return (
     <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
-      {data.length > 0 && data.map((el) => (
-        <BooksCard
-          key={el._id}
-          {...el}
-          handleDelete={handleDelete}
-            role = {role}
-          handleOpenModal={handleOpenModal}
-        />
-      ))}
+      {data.length > 0 &&
+        data.map((el) => (
+          <BooksCard
+            key={el._id}
+            {...el}
+            handleDelete={handleDelete}
+            role={role}
+            handleOpenModal={handleOpenModal}
+          />
+        ))}
 
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
         {selectedBook && (

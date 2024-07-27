@@ -3,15 +3,17 @@ import Book from "../Component/Book";
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/ContextApi";
+import { Spinner } from "../Component/Spinner/Spinner";
 
 export const Home = () => {
   const [data, setData] = useState([]);
   const [name, setName] = useState("");
+  const [laoding, setLoading] = useState(true);
   const [sortBy, setSortBy] = useState("");
   const [sortOrder, setSortOrder] = useState(1);
   const [role, setRole] = useState("");
   const [selectedGenres, setSelectedGenres] = useState([]);
-  const { title,setTitle} = useContext(AuthContext)
+  const { title} = useContext(AuthContext)
   const fetchData = () => {
     const token = localStorage.getItem("token");
     const config = {
@@ -32,14 +34,16 @@ export const Home = () => {
   if(title){
       params.append('title',title);
   }
-    axios
-      .get(`${url}?${params.toString()}`, config)
+    axios.get(`${url}?${params.toString()}`, config)
+        
       .then((res) => {
         console.log(res.data); // Log response to check data
         setData(res.data);
+          setLoading(false)
       })
       .catch((err) => {
         console.log(err);
+          setLoading(false)
       });
   };
 
@@ -61,11 +65,12 @@ export const Home = () => {
         : [...prevGenres, GenreName]
     );
   };
-   console.log(selectedGenres)
+   
   return (
     <div>
-      <Navbar name={name} />
+      <Navbar name={name} role={role}/>
       <div>
+         
         <div className="sort-price">
           <div>
             <span style={{ display: "block", color: "rgb(25, 118, 210)" }}>
@@ -85,6 +90,7 @@ export const Home = () => {
             <button onClick={() => handleGenre("Sports")}>Sports</button>
           </div>
         </div>
+       {laoding && <Spinner/>}
       </div>
       <Book data={data} fetchData={fetchData} role={role} />
     </div>

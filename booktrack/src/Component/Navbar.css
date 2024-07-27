@@ -15,7 +15,6 @@
   padding: 10px;
 }
 .nav-child {
-
   margin-right: 15px;
 }
 
@@ -27,15 +26,30 @@
   padding: 10px;
   width: 35em;
   border: none;
-    color: white;
+  color: white;
   background-color: #35355e;
   border-radius: 20px;
 }
-  .nav-child button{
-    background-color: #35355e;
-    border: none;
-    border-radius: 20px;
-    padding: 10px;
-     color: white;
-      width: 100px;  
-  }
+.nav-child button {
+  background-color: #35355e;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+  width: 100px;
+}
+/* styles.css */
+.admin-link {
+  color: white;
+  text-decoration: none;
+  border: none;
+  padding: 10px;
+  font-family: "Montserrat";
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.admin-link:hover {
+  color: #181a9d; /* A lighter shade of white for hover effect */
+}

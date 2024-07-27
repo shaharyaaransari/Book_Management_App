@@ -1,0 +1,18 @@
+h2 {
+    font-family: 'Montserrat';
+    width: 218px;
+    margin: auto;
+    color: white;
+    margin-top: 22px;
+}
+
+.content {
+    flex: 1;
+  
+    /* background-color: #f8f9fa; */
+  }
+  
+  .admin-container {
+    display: flex;
+    min-height: 100vh;
+  }
