@@ -1,4 +1,3 @@
-
 body {
   background-color: #111724;
 }
@@ -8,17 +7,15 @@ body {
   background-color: white;
   width: 500px;
   margin: 50px auto;
- font-weight: 900;
+  font-weight: 900;
   padding: 20px;
   font-family: "Montserrat";
   color: white;
   background-color: rgb(37, 51, 58);
-  ;
 }
 
 .back h3 {
   color: rgb(8, 25, 33);
- 
 }
 
 .back input {
@@ -41,19 +38,16 @@ body {
   border-radius: 20px;
   cursor: pointer;
   width: 100px;
-  background:  #1a1e27;
-  
+  background: #1a1e27;
 }
-
 
 .back img {
   width: 40%;
   border-radius: 50%;
   margin-bottom: 20px;
-   margin-left: 125px;
-     margin-top: 30px;
+  margin-left: 125px;
+  margin-top: 30px;
 }
-
 
 .back label {
   color: rgb(8, 25, 33);
@@ -65,53 +59,36 @@ body {
 .back p {
   color: red;
   text-align: left;
-
-}
-.sortingButtons {
-  margin-bottom: 10px;
-  
 }
 
-.sortingButtons button {
-  margin-right: 5px;
-  background-color: rgba(27, 56, 114, 0.811);
-  color: white;
-  padding: 10px;
-  border: none;
-  font-size: 15px;
-  margin-left: 10px;
-  border-radius: 15px;
-  cursor: pointer;
-  width: 115px;
+
+.sort-price {
+  display: flex;
+  width: 70%;
+  margin: 20px auto;
+  justify-content: space-between;
 }
-.sort-price{
-    
-    display: flex;
-      width: 70%;
-      margin:20px auto;
-      justify-content: space-between;
+.sort-price span {
+  margin-left: 20px;
 }
-  .sort-price span{
-       margin-left: 20px;
-  }
-.sort-price button{
-  background-color: #35355e;
+.sort-price button {
+  background-image: linear-gradient(-225deg, #65379B 0%, #886AEA 53%, #6457C6 100%);
   border: none;
   margin: 10px;
- 
+cursor: pointer;
   border-radius: 20px;
   padding: 10px;
   color: white;
   width: 115px;
 }
-.genre button{
-  margin:10px 5px;
-  background-color: rgba(27, 56, 114, 0.811);
+.genre button {
+  margin: 10px 5px;
+  background-image: linear-gradient(-225deg, #65379B 0%, #886AEA 53%, #6457C6 100%);
   color: white;
   padding: 10px;
   border: none;
   font-size: 15px;
-  
+cursor: pointer;
   border-radius: 15px;
   cursor: pointer;
   padding: 10px 0;

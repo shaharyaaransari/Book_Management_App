@@ -7,6 +7,7 @@ import { AuthContext } from '../context/ContextApi';
 import { Link } from 'react-router-dom';
 export const Navbar = ({name,role}) => {
   const {setAuth,setTitle,title} = useContext(AuthContext)
+  
      const [search,setSearch] = useState('')
   const handleLogout = () => {
     const token = localStorage.getItem("token");
@@ -16,7 +17,7 @@ export const Navbar = ({name,role}) => {
         }
     })
     .then((res) => {
-        console.log(res.data);
+        
         if (res.status === 200) {
             // Clear the local storage
             setAuth(false)
@@ -38,6 +39,7 @@ export const Navbar = ({name,role}) => {
     setTitle("")
       setSearch('')
     }
+    
   return (
     <div className='nav-container'>
    <span className='title'>Bookify</span>
