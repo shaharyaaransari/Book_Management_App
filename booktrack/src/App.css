@@ -40,7 +40,7 @@ body {
   margin-left: 10px;
   border-radius: 20px;
   cursor: pointer;
- 
+  width: 100px;
   background:  #1a1e27;
   
 }
