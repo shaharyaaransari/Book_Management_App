@@ -40,7 +40,7 @@ body {
   margin-left: 10px;
   border-radius: 20px;
   cursor: pointer;
-  font-family: "Montserrat";
+ 
   background:  #1a1e27;
   
 }
@@ -98,7 +98,7 @@ body {
   background-color: #35355e;
   border: none;
   margin: 10px;
-  font-family: "Montserrat";
+ 
   border-radius: 20px;
   padding: 10px;
   color: white;

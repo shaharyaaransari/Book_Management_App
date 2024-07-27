@@ -1,10 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import "./Navbar.css"
 import { CiSearch } from "react-icons/ci";
+import { RxCrossCircled } from "react-icons/rx";
 import axios from 'axios';
 import { AuthContext } from '../context/ContextApi';
 export const Navbar = ({name}) => {
-  const {isAuth,setAuth} = useContext(AuthContext)
+  const {setAuth,setTitle,title} = useContext(AuthContext)
+     const [search,setSearch] = useState('')
   const handleLogout = () => {
     const token = localStorage.getItem("token");
     axios.get(`https://sample-bakened.onrender.com/user/logout`, {
@@ -27,17 +29,31 @@ export const Navbar = ({name}) => {
         console.log(err);
     });
 };
+  const handleSearch = ()=>{
+      setTitle(search)
+  }
 
+    const handleClear = ()=>{
+    setTitle("")
+      setSearch('')
+    }
   return (
     <div className='nav-container'>
    <span className='title'>Bookify</span>
     <div className='input-container'>
-          <input type="text" placeholder='Search Book' />
-            <CiSearch style={{color:"white",marginLeft: "-32px",
+          <input type="text" placeholder='Search Book'   value={search} onChange={(e)=>setSearch(e.target.value)}/>
+            {
+              !title &&  <CiSearch style={{color:"white",marginLeft: "-32px",
+                marginBottom:" -2px",
+                width:" 26px"}} onClick={handleSearch}/>
+            }
+           
+{title && <RxCrossCircled style={{color:"white",marginLeft: "-32px",
     marginBottom:" -2px",
-    width:" 26px"}}/>
+    width:" 26px"}}  onClick={handleClear} />}
     </div>
    <div className='nav-child'>
+      
     {name && <span className='title' style={{marginRight:"20px"}}>{name}</span>}
       
          <button onClick={handleLogout}>Logout</button>

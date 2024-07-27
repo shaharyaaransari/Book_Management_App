@@ -23,10 +23,12 @@ export const Login = () => {
         axios.post(`https://sample-bakened.onrender.com/user/signup`,details)
         .then((res)=>{
             console.log(res)
+           
                if(res.status===200){
                 withReactContent(Swal).fire({
                     title: <i>{res.data.msg}</i>,
                   })
+                  setShow(!show);
                }else{
                 withReactContent(Swal).fire({
                     title: <i>{res.data.msg}</i>,
@@ -37,7 +39,7 @@ export const Login = () => {
          console.log(err)
         })
      
-      setShow(!show);
+     
        
     }
     setDetails(initialValue);
