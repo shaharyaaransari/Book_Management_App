@@ -38,4 +38,13 @@
     font-size: 18px; /* Reduced font size */
     text-align: center; /* Center text */
 }
-
+.book-container button{
+    background-image: linear-gradient(-225deg, #65379B 0%, #886AEA 53%, #6457C6 100%);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 10px;
+   margin-left: 10px;
+  color: white;
+  width: 100px;
+}

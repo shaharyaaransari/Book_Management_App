@@ -11,6 +11,7 @@ export const BooksCard = ({
   handleOpenModal,
   role,
 }) => {
+   console.log("role",role)
   return (
     <div className="book-container">
       <img src={image} alt="image" />

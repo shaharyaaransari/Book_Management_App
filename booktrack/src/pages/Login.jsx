@@ -109,7 +109,7 @@ export const Login = () => {
       <div className="back">
         {show ? <>
           <h2>Sign Up</h2>
-          <img src="https://www.bonanzaonline.com/images/img_avatar.png" alt="avatar" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7-d5qr9WzS926jiHDPlYrCL01Eb0M8C8c4w&s" alt="avatar" />
           <label htmlFor="uname" style={{color:"white"}}><b>Name</b></label>
           <input type="text" name="name" value={details.name} onChange={handleChange} placeholder="Enter name" />
           <p>{formError.name}</p>
@@ -123,7 +123,7 @@ export const Login = () => {
           <button onClick={handleRegister}>Register</button>
         </> : <>
           <h2>Login</h2>
-          <img src="https://www.bonanzaonline.com/images/img_avatar.png" alt="avatar" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7-d5qr9WzS926jiHDPlYrCL01Eb0M8C8c4w&s" alt="avatar" />
           <label htmlFor="email" style={{color:"white"}}><b>Email</b></label>
           <input type="email" name="email" value={details.email} onChange={handleChangeLogin} placeholder="Enter Email" />
           <p>{formError.email}</p>

@@ -133,7 +133,7 @@ export const Home = () => {
         </div>
         {loading && <Spinner />}
       </div>
-      <Book data={data} fetchData={fetchData} />
+      <Book data={data} fetchData={fetchData} role={role}/>
     </div>
   );
 };
