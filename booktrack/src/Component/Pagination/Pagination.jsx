@@ -6,7 +6,8 @@ export const Pagination = ({totalPages,setPage ,page}) => {
       };
   return (
     <div className='pagination'> {[...Array(totalPages)].map((_, i) => (
-        <button key={i} onClick={() => handlePageChange(i + 1)} disabled={i+1===page}>
+        <button   key={i} onClick={() => handlePageChange(i + 1)} disabled={i+1===page}  className={page==i+1?'active':'notActive'}
+       >
           {i + 1}
         </button>
       ))}</div>

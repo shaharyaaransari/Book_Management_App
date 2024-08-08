@@ -42,7 +42,7 @@ export const Home = () => {
 
     axios.get(`${url}?${params.toString()}`, config)
       .then((res) => {
-        console.log(res.data); // Log response to check data
+      
         setData(res.data);
         setLoading(false);
       })
