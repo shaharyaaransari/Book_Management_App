@@ -4,6 +4,7 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/ContextApi";
 import { Spinner } from "../Component/Spinner/Spinner";
+import { Pagination } from "../Component/Pagination/Pagination";
 
 export const Home = () => {
   const [data, setData] = useState([]);
@@ -15,7 +16,9 @@ export const Home = () => {
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [selectedSort, setSelectedSort] = useState(""); // Added state for selected sort
   const { title } = useContext(AuthContext);
-
+  const [page, setPage] = useState(1);
+  const itemsPerPage = 8;
+  const totalPages = Math.ceil(data.length / itemsPerPage);
   const fetchData = () => {
     const token = localStorage.getItem("token");
     const config = {
@@ -136,7 +139,8 @@ export const Home = () => {
         </div>
         {loading && <Spinner />}
       </div>
-      <Book data={data} fetchData={fetchData} role={role}/>
+      <Book data={data} fetchData={fetchData} totalPages={totalPages} itemsPerPage={itemsPerPage} page={page} setPage={setPage} role={role}/>
+      <Pagination totalPages={totalPages} setPage={setPage}   page={page}/>
     </div>
   );
 };

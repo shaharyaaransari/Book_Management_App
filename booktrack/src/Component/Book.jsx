@@ -2,10 +2,12 @@ import axios from "axios";
 import { BooksCard } from "./BooksCard";
 import Modal from "./Modal";
 import { useState } from "react";
+import { Pagination } from "./Pagination/Pagination";
 
-export default function Book({ data, fetchData, role }) {
+export default function Book({ data, fetchData, role,page,itemsPerPage }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedBook, setSelectedBook] = useState(null);
+ 
   const [bookData, setBookData] = useState({
     title: "",
     author: "",
@@ -82,7 +84,7 @@ export default function Book({ data, fetchData, role }) {
   return (
     <div className="card-container" >
       {data.length > 0 &&
-        data.map((el) => (
+      data.slice((page - 1) * itemsPerPage, page * itemsPerPage).map((el) => (
           <BooksCard
             key={el._id}
             {...el}
