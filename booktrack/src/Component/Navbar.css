@@ -54,3 +54,21 @@
 .admin-link:hover {
   color: #181a9d; /* A lighter shade of white for hover effect */
 }
+.title-name{
+  margin-right: 20px;
+}
+
+@media (max-width: 480px) {
+  .input-container input {
+margin-left: 10px;
+    width: 15em;
+  }
+
+  .title{
+    margin-left: 0px;
+    font-size: 10px;
+  }
+  .nav-child{
+    display: none;
+  }
+}

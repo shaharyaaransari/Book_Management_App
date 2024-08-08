@@ -99,7 +99,8 @@ export const Home = () => {
           </div>
           <div>
             <span style={{ display: "block", color: "rgb(25, 118, 210)" }}>Filter By Genre</span>
-            <button 
+              <div className="filter-section">
+              <button 
               onClick={() => handleGenre("Action")} 
               style={getGenreButtonStyle("Action")}
             >
@@ -129,6 +130,8 @@ export const Home = () => {
             >
               Sports
             </button>
+              </div>
+            
           </div>
         </div>
         {loading && <Spinner />}

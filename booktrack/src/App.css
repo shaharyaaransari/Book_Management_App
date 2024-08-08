@@ -100,3 +100,17 @@ cursor: pointer;
   justify-content: center;
   text-align: center;
 }
+@media (max-width: 480px) {
+ .filter-section{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+ }
+   .sort-price button{
+    width: 110px;
+   }
+   .sort-price{
+    width: 90%;
+   }
+}
+
+/*  */

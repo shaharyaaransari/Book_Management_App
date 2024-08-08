@@ -5,6 +5,7 @@ import { RxCrossCircled } from "react-icons/rx";
 import axios from 'axios';
 import { AuthContext } from '../context/ContextApi';
 import { Link } from 'react-router-dom';
+import Drawer from './Drawer/Drawer';
 export const Navbar = ({name,role}) => {
   const {setAuth,setTitle,title} = useContext(AuthContext)
   
@@ -57,11 +58,11 @@ export const Navbar = ({name,role}) => {
     </div>
    <div className='nav-child'>
       
-    {name && <span className='title' style={{marginRight:"20px"}}>{name}</span>}
+    {name && <span className='title title-name' >{name}</span>}
       {role ==="CREATOR" && <Link className='admin-link' to="/admin">Admin</Link>}
          <button onClick={handleLogout}>Logout</button>
    </div>
-
+    <Drawer  name={name} role={role}  handleLogout={handleLogout}/>
     </div>
   )
 }

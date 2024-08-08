@@ -80,7 +80,7 @@ export default function Book({ data, fetchData, role }) {
   };
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
+    <div className="card-container" >
       {data.length > 0 &&
         data.map((el) => (
           <BooksCard

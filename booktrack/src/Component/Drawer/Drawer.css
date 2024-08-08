@@ -1,0 +1,94 @@
+/* Drawer.css */
+
+.drawer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: rgb(19, 19, 48);
+    transition: left 0.3s ease;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  .drawer.open {
+    left: 0;
+  }
+  
+  .drawer-toggle {
+    display: none;
+    font-size: 24px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: rgb(19, 19, 48);
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  .drawer-close {
+    font-size: 24px;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .drawer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .drawer ul li {
+    margin: 20px 0;
+  }
+  
+  .drawer ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .drawer ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Media Query for Mobile Devices */
+  @media (max-width: 768px) {
+    .drawer-toggle {
+      font-size: 20px;
+    }
+  
+    .drawer ul li a {
+      font-size: 16px;
+    }
+  }
+ .logout-button{
+    background-image: linear-gradient(-225deg, #65379B 0%, #886AEA 53%, #6457C6 100%);
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  width: 100px;
+  }
+  @media (max-width:480px) {
+    .drawer{
+          display: block;
+          left: -293px;
+    }
+    .drawer-toggle{
+       display: unset;
+       position: fixed;
+       top: 16px;
+       left: 364px;
+       position: absolute;
+    }
+  }
+  
